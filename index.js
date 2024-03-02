@@ -8,49 +8,24 @@ function init() {
         .prompt([
             {
                 type: 'input',
-                message: "Give a description of your project:",
-                name: 'description',
+                message: "Enter text (up to 3 characters):",
+                name: 'character-input',
             },
             {
                 type: 'input',
-                message: "Write installation instructions:",
-                name: 'installation',
-            },
-            {
-                type: 'input',
-                message: "Include usage information:",
-                name: 'usage',
+                message: "Enter text color (keyword or hexadecimal):",
+                name: 'text-color',
             },
             {
                 type: 'checkbox',
-                message: "Choose a license:",
-                choices: ["1", "2", "3", "etc"],
-                name: 'license',
+                message: "Choose your shape:",
+                choices: ["triangle", "circle", "square"],
+                name: 'shape-type',
             },
             {
                 type: 'input',
-                message: "Add contribution guidelines:",
-                name: 'contribution',
-            },
-            {
-                type: 'input',
-                message: "Give test instructions:",
-                name: 'instructions',
-            },
-            {
-                type: 'input',
-                message: "Enter your Github account:",
-                name: 'instructions',
-            },
-            {
-                type: 'input',
-                message: "Enter your email:",
-                name: 'instructions',
-            },
-            {
-                type: 'input',
-                message: "Additional instructions on how to contact you:",
-                name: 'instructions',
+                message: "Enter shape color (keyword or hexadecimal):",
+                name: 'shape-color',
             },
         ])
         // .then((answers) => {
