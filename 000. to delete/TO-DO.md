@@ -1,21 +1,4 @@
 # TO-DO
-## SETUP
-1. create basic file structure seen below
-2. add and install jest and inquirer
-3. Make sure that you remove `dist` from the `.gitignore` file so that Git will track this folder and include it when you push up to your application's repository.
-
-```md
-.  
-├── examples/           // Example svg file(s) created with the app
-├── lib/                // Folder for classes or functions
-    ├── shapes.js       // Exports `Triangle`, `Circle`, and `Square` classes
-    ├── shapes.test.js  // Jest tests for shapes
-    └── more...         // Additional files and tests
-├── .gitignore          // Indicates which folders and files Git should ignore
-├── index.js            // Runs the application using imports from lib/
-├── package.json
-└── README.md           // App description, link to video, setup and usage instructions           
-```
 
 ## INQUIRER
 1. prompt for entering up to 3 characters
@@ -58,5 +41,7 @@ expect(shape.render()).toEqual('<polygon points="150, 18 244, 182 56, 182" fill=
 3. readme
 4. sample SVG file submission
 
-
+## OTHER
+1. from "setup", not sure if i need to do something for this?:
+    "Make sure that you remove `dist` from the `.gitignore` file so that Git will track this folder and include it when you push up to your application's repository."
 
