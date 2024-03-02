@@ -1,0 +1,62 @@
+# TO-DO
+## SETUP
+1. create basic file structure seen below
+2. add and install jest and inquirer
+3. Make sure that you remove `dist` from the `.gitignore` file so that Git will track this folder and include it when you push up to your application's repository.
+
+```md
+.  
+├── examples/           // Example svg file(s) created with the app
+├── lib/                // Folder for classes or functions
+    ├── shapes.js       // Exports `Triangle`, `Circle`, and `Square` classes
+    ├── shapes.test.js  // Jest tests for shapes
+    └── more...         // Additional files and tests
+├── .gitignore          // Indicates which folders and files Git should ignore
+├── index.js            // Runs the application using imports from lib/
+├── package.json
+└── README.md           // App description, link to video, setup and usage instructions           
+```
+
+## INQUIRER
+1. prompt for entering up to 3 characters
+2. prompt for a text color (takes keywords or hexadecimals)
+3. prompt for shape choice (triangle, circle, square)
+4. prompt for shape color (takes keywords or hexadecimals)
+5. takes inputs as instructions for the svg file
+6. creates file called `logo.svg`
+7. generates text in the command line: "Generated logo.svg"
+
+## SVG INSTRUCTIONS
+1. create `Triangle`, `Square`, and `Circle` classes.
+2. create a parent `Shape` class for `Triangle`, `Square`, and `Circle` to inherit from. (DRY)
+3. ???????????????????????????????
+4. research SVG using the links in REQS.md
+5. create a 300x200 px image using the instructions from the inquirer prompts.
+
+## TESTS
+write tests for shapes.js. (if you make additional js files, you don't have to build tests for those!)
+1. (MANDATORY) *each* class - Triangle, Square, and Circle.
+    - Each shape class should be tested for a `render()` method that returns a string for the corresponding SVG file with the given shape color. (Example below)
+2. sorts of things i think i should try to test for...?
+    a. shape sizing?
+    b. shape coloring?
+    c. text coloring?
+    d. function calls working?
+    e. inquirer consistently working?
+    f. number of characters in text submission? (we already kinda did that in class?)
+    g. text color submissions? (same?)
+
+```js
+const shape = new Triangle();
+shape.setColor("blue");
+expect(shape.render()).toEqual('<polygon points="150, 18 244, 182 56, 182" fill="blue" />');
+```
+
+## SUBMISSION
+1. record walkthrough video demonstrating functionality and tests
+2. add video to readme of project and submission 
+3. readme
+4. sample SVG file submission
+
+
+
