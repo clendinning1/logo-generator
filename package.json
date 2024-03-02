@@ -1,0 +1,21 @@
+{
+    "name": "logo-generator",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/clendinning1/logo-generator"
+    },
+    "author": "clendinning1",
+    "license": "",
+    "devDependencies": {
+        "jest": "^24.9.0"
+    },
+    "dependencies": {
+        "inquirer": "^8.2.4"
+    }
+}
