@@ -1,10 +1,6 @@
 # TO-DO
 
 ## INQUIRER
-1. prompt for entering up to 3 characters
-2. prompt for a text color (takes keywords or hexadecimals)
-3. prompt for shape choice (triangle, circle, square)
-4. prompt for shape color (takes keywords or hexadecimals)
 5. takes inputs as instructions for the svg file
 6. creates file called `logo.svg`
 7. generates text in the command line: "Generated logo.svg"
