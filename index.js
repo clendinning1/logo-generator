@@ -18,7 +18,7 @@ function init() {
             {
                 type: 'input',
                 message: "Enter text color:",
-                name: 'text-color',
+                name: 'textcolor',
                 validate: function (input) {
                     const isValidColor = color => {
                         const hexPattern = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
@@ -37,12 +37,12 @@ function init() {
                 message: "Choose your shape:",
                 choices: ["triangle", "circle", "square"],
                 default: "circle",
-                name: 'shape-type',
+                name: 'shapetype',
             },
             {
                 type: 'input',
                 message: "Enter shape color:",
-                name: 'shape-color',
+                name: 'shapecolor',
                 validate: function (input) {
                     const isValidColor = color => {
                         const hexPattern = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
@@ -59,9 +59,9 @@ function init() {
         ])
         .then((response) => {
             const fs = require("fs");
-            const testArg = "sillay"
-            // need to make inputs into vars?
-            fs.appendFile('logo.svg', response.characterinput, (err) =>
+            let inputs = "\n" + response.characterinput + " " + response.textcolor + " " + response.shapetype + " " + response.shapecolor;
+            
+            fs.appendFile('logo.svg', inputs, (err) =>
 
                 err ? console.error(err) : console.log("Generated logo.svg")
             );
