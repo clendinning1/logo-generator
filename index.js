@@ -1,6 +1,3 @@
-// code from other project; this is how we initialize the inquirer
-// other project wanted an array of questions for user input like so, but i couldnt get it to work?:
-// const questions = [];
 
 function init() {
     const inquirer = require('inquirer');
@@ -9,12 +6,12 @@ function init() {
             {
                 type: 'input',
                 message: "Enter text (up to 3 characters):",
-                name: 'character-input',
-                validate: async (input) => {
-                    if (){
-                        return "Must enter";
+                name: 'characterinput',
+                validate: function (input) {
+                    if (input.length >= 4) {
+                        return "Must enter 1-3 characters";
                     } else {
-                        // continue
+                        return true;
                     }
                 }
             },
@@ -35,9 +32,11 @@ function init() {
                 name: 'shape-color',
             },
         ])
-        .then((answers) => {
+        .then(() => {
+            // put "answers" in the blue parantheses later
             // save answers
-            // console.log("Generated logo.svg")
+            console.log("Generated logo.svg")
+            return;
             // generate file
         });
     // .catch((error) => {
