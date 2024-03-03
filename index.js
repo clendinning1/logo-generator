@@ -60,8 +60,8 @@ function init() {
         .then((response) => {
             const fs = require("fs");
             const testArg = "sillay"
-
-            fs.appendFile('logo.svg', testArg, (err) =>
+            // need to make inputs into vars?
+            fs.appendFile('logo.svg', response.characterinput, (err) =>
 
                 err ? console.error(err) : console.log("Generated logo.svg")
             );
