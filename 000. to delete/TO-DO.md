@@ -3,10 +3,6 @@
 ## INQUIRER
 6. takes inputs as instructions for the svg file
 
-## SVG INSTRUCTIONS
-1. create `Triangle`, `Square`, and `Circle` classes.
-2. create a parent `Shape` class for `Triangle`, `Square`, and `Circle` to inherit from. (DRY)
-
 ## TESTS
 write tests for shapes.js. (if you make additional js files, you don't have to build tests for those!)
 1. (MANDATORY) *each* class - Triangle, Square, and Circle.
