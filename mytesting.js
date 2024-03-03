@@ -5,9 +5,15 @@ function init() {
             {
                 type: 'checkbox',
                 message: "Choose your shape:",
-                default: "triangle",
                 choices: ["triangle", "circle", "square"],
-                name: 'shapetype'
+                name: 'shapetype',
+                validate: function (shapetype) {
+                    if (shapetype === "triangle") {
+                        return "Must choose a shape";
+                    } else {
+                        return true;
+                    }
+                }
             },
         ])
         .then((response) => {
