@@ -58,6 +58,9 @@ function init() {
             },
         ])
         .then((response) => {
+
+            const shapes = require('./lib/shapes.js');
+
             const fs = require("fs");
             let inputs = "\n" + response.characterinput + " " + response.textcolor + " " + response.shapetype + " " + response.shapecolor;
             
@@ -65,11 +68,7 @@ function init() {
 
                 err ? console.error(err) : console.log("Generated logo.svg")
             );
-
-            // if no shape type given, default to circle
-            console.log()
             return;
-            // generate file
         });
 }
 
