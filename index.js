@@ -10,6 +10,13 @@ function init() {
                 type: 'input',
                 message: "Enter text (up to 3 characters):",
                 name: 'character-input',
+                validate: async (input) => {
+                    if (){
+                        return "Must enter";
+                    } else {
+                        // continue
+                    }
+                }
             },
             {
                 type: 'input',
@@ -28,14 +35,11 @@ function init() {
                 name: 'shape-color',
             },
         ])
-        // .then((answers) => {
-        //     // Use user feedback for... whatever!!
-        // })
-        .then((response) =>
-            response.confirm === response.password
-                ? console.log('Done!')
-                : console.log('You forgot your password already?!')
-        );
+        .then((answers) => {
+            // save answers
+            // console.log("Generated logo.svg")
+            // generate file
+        });
     // .catch((error) => {
     //     if (error.isTtyError) {
     //         // Prompt couldn't be rendered in the current environment
