@@ -24,6 +24,7 @@ function init() {
                 type: 'checkbox',
                 message: "Choose your shape:",
                 choices: ["triangle", "circle", "square"],
+                default: "circle",
                 name: 'shape-type',
             },
             {

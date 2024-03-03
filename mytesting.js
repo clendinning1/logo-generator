@@ -3,24 +3,18 @@ function init() {
     inquirer
         .prompt([
             {
-                type: 'input',
-                message: "Enter text (up to 3 characters):",
-                name: 'characterinput',
-                validate: function (input) {
-
-                    // return /^a-zA-Z]{3,}$/.test(input);
-
-                    if (input.length >= 4) {
-                        return "naaah";
-                    } else {
-                        return true;
-                    }
-                }
-            }
+                type: 'checkbox',
+                message: "Choose your shape:",
+                choices: ["triangle", "circle", "square"],
+                name: 'shape-type',
+            },
         ])
-        .then(() => {
-            console.log("Done!")
+        .then((input) => {
+            // put "answers" in the blue parantheses later
+            // save answers
+            console.log(input)
             return;
+            // generate file
         });
 }
 
