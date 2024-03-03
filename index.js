@@ -36,6 +36,7 @@ function init() {
         .then(() => {
             // put "answers" in the blue parantheses later
             // save answers
+            // if no shape type given, default to circle
             console.log("Generated logo.svg")
             return;
             // generate file
