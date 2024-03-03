@@ -5,16 +5,17 @@ function init() {
             {
                 type: 'input',
                 message: "Enter text (up to 3 characters):",
-                name: 'character-input',
-                validate: function(input){
-                    if (input === "1") {
-                        return "Don't put the number 1 bro";
-                    }
-                }
+                name: 'characterinput',
+              //  validate: function(input){
+              //      return /^a-zA-Z]{3,}$/.test(input);
+              //      // if (input === "1") {
+              //      //     return "Don't put the number 1 bro";
+              //      // }
+              //  }
             }
         ])
         .then((answers) => {
-            console.log("Done!")
+            console.log("Done! " + answers)
             return;
         });
 }
