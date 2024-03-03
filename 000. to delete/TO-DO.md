@@ -10,6 +10,12 @@ maybe shapes.js is required earlier in the index.js file?
 that way we can change the values of the variables later in index.js
 and use them to append the logo.svg file?
 
+you can't pull info into the svg file, which
+means we have to use shapes.js variables in 
+the "data" portion of the file creation.
+
+if that's the case, using shapes.js kind of feels like extra unnecessary work?
+
 ## TESTS
 write tests for shapes.js. (if you make additional js files, you don't have to build tests for those!)
 1. (MANDATORY) *each* class - Triangle, Square, and Circle.

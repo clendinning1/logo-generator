@@ -1,3 +1,5 @@
 <svg width="300" height="200">
-    <circle cx="25" cy="75" r="20" stroke="red" fill="red" stroke-width="5" />
+    <circle cx="150" cy="100" r="90" fill="red" />
+    <rect x="75" y="35" width="150" height="150" fill="blue" />
+    <polygon points="150 0, 250 190, 50 190" style="fill: green" />
 </svg>
