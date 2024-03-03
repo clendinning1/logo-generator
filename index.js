@@ -1,4 +1,4 @@
-
+// inquirer funct
 function init() {
     const inquirer = require('inquirer');
     inquirer
@@ -58,20 +58,20 @@ function init() {
             },
         ])
         .then(() => {
+            const fs = require("fs");
+
+            fs.appendFile('logo.svg', "Data", (err) =>
+
+                err ? console.error(err) : console.log("Generated logo.svg")
+            );
+
             // put "answers" in the blue parantheses later
             // save answers
             // if no shape type given, default to circle
-            console.log("Generated logo.svg")
+            console.log()
             return;
             // generate file
         });
-    // .catch((error) => {
-    //     if (error.isTtyError) {
-    //         // Prompt couldn't be rendered in the current environment
-    //     } else {
-    //         // Something else went wrong
-    //     }
-    // });
 }
 
 // calling funct
