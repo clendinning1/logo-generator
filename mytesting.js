@@ -9,13 +9,13 @@ function init() {
                 validate: function(input){
                     if (input === "1") {
                         return "Don't put the number 1 bro";
-                    } else {}
+                    }
                 }
             }
         ])
         .then((answers) => {
             console.log("Done!")
-            return
+            return;
         });
 }
 
