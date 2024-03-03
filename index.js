@@ -68,7 +68,7 @@ function init() {
             } else if (response.shapetype == "square") {
                 console.log("issa square");
             } else {
-                console.log("errrrror");
+                console.log("bad input, defaulting to circle");
             }
 
             function createFile() {

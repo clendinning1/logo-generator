@@ -16,6 +16,8 @@ the "data" portion of the file creation.
 
 if that's the case, using shapes.js kind of feels like extra unnecessary work?
 
+can't pull variables from shapes.js to index.js.......whats the point of having index.js then???
+
 ## TESTS
 write tests for shapes.js. (if you make additional js files, you don't have to build tests for those!)
 1. (MANDATORY) *each* class - Triangle, Square, and Circle.
