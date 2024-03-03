@@ -57,10 +57,11 @@ function init() {
                 }
             },
         ])
-        .then(() => {
+        .then((response) => {
             const fs = require("fs");
+            const testArg = "sillay"
 
-            fs.appendFile('logo.svg', "Data", (err) =>
+            fs.appendFile('logo.svg', testArg, (err) =>
 
                 err ? console.error(err) : console.log("Generated logo.svg")
             );
