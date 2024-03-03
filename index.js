@@ -1,3 +1,28 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // inquirer funct
 function init() {
     const inquirer = require('inquirer');
@@ -62,24 +87,24 @@ function init() {
             require('./lib/shapes.js');
 
             if (response.shapetype == "circle") {
-                console.log("issa circle");
+                console.log("Building your circle...");
             } else if (response.shapetype == "triangle") {
-                console.log("issa triangle");
+                console.log("Building your triangle...");
             } else if (response.shapetype == "square") {
-                console.log("issa square");
+                console.log("Building your square...");
             } else {
-                console.log("bad input, defaulting to circle");
+                console.log("Bad input, defaulting to circle. Building your circle...");
             }
 
             function createFile() {
                 const fs = require("fs");
-                let inputs = "sigh";
 
-                fs.appendFile('logo.svg', inputs, (err) =>
-
+                fs.appendFile('logo.svg', svg, (err) =>
                     err ? console.error(err) : console.log("Generated logo.svg")
                 );
             }
+
+            createFile();
 
             return;
         });
