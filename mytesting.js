@@ -3,16 +3,25 @@ function init() {
     inquirer
         .prompt([
             {
-                type: 'checkbox',
-                message: "Choose your shape:",
-                choices: ["triangle", "circle", "square"],
-                name: 'shapetype',
+                type: 'input',
+                message: "Enter Color:",
+                name: 'colorinput',
+                validate: function (input) {
+                    const isValidColor = color => {
+                        const hexPattern = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
+                        return hexPattern.test(color);
+                    }
+                    const testInput = isValidColor(input);
+                    if (testInput === false) {
+                        return "Must enter a valid color";
+                    } else {
+                        return true;
+                    }
+                }
             },
         ])
-        .then((response) => {
-            // put "answers" in the blue parantheses later
-            // save answers
-            // generate file
+        .then(() => {
+            console.log("Done!");
         });
 }
 
