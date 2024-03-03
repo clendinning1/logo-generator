@@ -58,30 +58,22 @@ function init() {
             },
         ])
         .then((response) => {
+            // running shapes.js
+            require('./lib/shapes.js');
 
-            const shapes = require('./lib/shapes.js');
+            function createFile() {
+                const fs = require("fs");
+                let inputs = "sigh";
 
-            const fs = require("fs");
-            let inputs = "\n" + response.characterinput + " " + response.textcolor + " " + response.shapetype + " " + response.shapecolor;
-            
-            fs.appendFile('logo.svg', inputs, (err) =>
+                fs.appendFile('logo.svg', inputs, (err) =>
 
-                err ? console.error(err) : console.log("Generated logo.svg")
-            );
+                    err ? console.error(err) : console.log("Generated logo.svg")
+                );
+            }
+
             return;
         });
 }
 
 // calling funct
 init();
-
-
-
-
-// code from other project; i think this is how we add files?:
-// const fs = require('fs');
-// fs.appendFile('log.txt', "sillymode", (err) =>
-//     err ? console.error(err) : console.log('Commit logged!')
-// );
-// function writeToFile(fileName, data) {
-// }

@@ -1,7 +1,14 @@
 # TO-DO
 
-## INQUIRER
-6. takes inputs as instructions for the svg file
+## GENERATE
+1. index.js asks for the info
+?. index.js runs shapes.js
+
+which creates the svg file? 
+shapes.js has the functions with all the shapes and shit. 
+maybe shapes.js is required earlier in the index.js file?
+that way we can change the values of the variables later in index.js
+and use them to append the logo.svg file?
 
 ## TESTS
 write tests for shapes.js. (if you make additional js files, you don't have to build tests for those!)
