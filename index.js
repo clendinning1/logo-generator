@@ -61,15 +61,7 @@ function init() {
             // running shapes.js
             require('./lib/shapes.js');
 
-            if (response.shapetype = "circle") {
-                console.log("issa circle");
-            } else if (response.shapetype = "triangle") {
-                console.log("issa triangle");
-            } else if (response.shapetype = "square") {
-                console.log("issa square");
-            } else {
-                console.log("errrrror");
-            }
+            console.log(response.shapetype);
 
             function createFile() {
                 const fs = require("fs");
