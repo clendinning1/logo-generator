@@ -6,9 +6,6 @@
 ## SVG INSTRUCTIONS
 1. create `Triangle`, `Square`, and `Circle` classes.
 2. create a parent `Shape` class for `Triangle`, `Square`, and `Circle` to inherit from. (DRY)
-3. ???????????????????????????????
-4. research SVG using the links in REQS.md
-5. create a 300x200 px image using the instructions from the inquirer prompts.
 
 ## TESTS
 write tests for shapes.js. (if you make additional js files, you don't have to build tests for those!)
