@@ -1,7 +1,6 @@
 # TO-DO
 
 ## INQUIRER
-5. make sure it only takes acceptable inputs
 6. takes inputs as instructions for the svg file
 7. creates file called `logo.svg`
 8. generates text in the command line: "Generated logo.svg"
