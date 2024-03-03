@@ -17,8 +17,20 @@ function init() {
             },
             {
                 type: 'input',
-                message: "Enter text color (keyword or hexadecimal):",
+                message: "Enter text color:",
                 name: 'text-color',
+                validate: function (input) {
+                    const isValidColor = color => {
+                        const hexPattern = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
+                        return hexPattern.test(color);
+                    }
+                    const testInput = isValidColor(input);
+                    if (testInput === false) {
+                        return "Must enter a valid color";
+                    } else {
+                        return true;
+                    }
+                }
             },
             {
                 type: 'checkbox',
@@ -29,8 +41,20 @@ function init() {
             },
             {
                 type: 'input',
-                message: "Enter shape color (keyword or hexadecimal):",
+                message: "Enter shape color:",
                 name: 'shape-color',
+                validate: function (input) {
+                    const isValidColor = color => {
+                        const hexPattern = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
+                        return hexPattern.test(color);
+                    }
+                    const testInput = isValidColor(input);
+                    if (testInput === false) {
+                        return "Must enter a valid color";
+                    } else {
+                        return true;
+                    }
+                }
             },
         ])
         .then(() => {
