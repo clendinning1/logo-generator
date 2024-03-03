@@ -6,16 +6,20 @@ function init() {
                 type: 'input',
                 message: "Enter text (up to 3 characters):",
                 name: 'characterinput',
-              //  validate: function(input){
-              //      return /^a-zA-Z]{3,}$/.test(input);
-              //      // if (input === "1") {
-              //      //     return "Don't put the number 1 bro";
-              //      // }
-              //  }
+               validate: function(input){
+
+                   // return /^a-zA-Z]{3,}$/.test(input);
+
+                   if (input === "1") {
+                       return "Don't put the number 1 bro";
+                   } else {
+                    return true;
+                   }
+               }
             }
         ])
-        .then((answers) => {
-            console.log("Done! " + answers)
+        .then(() => {
+            console.log("Done!")
             return;
         });
 }
