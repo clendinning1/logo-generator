@@ -66,8 +66,6 @@ function init() {
                 err ? console.error(err) : console.log("Generated logo.svg")
             );
 
-            // put "answers" in the blue parantheses later
-            // save answers
             // if no shape type given, default to circle
             console.log()
             return;
