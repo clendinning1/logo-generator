@@ -12,6 +12,7 @@ write tests for shapes.js. (if you make additional js files, you don't have to b
     e. inquirer consistently working?
     f. number of characters in text submission? (we already kinda did that in class?)
     g. text color submissions? (same?)
+3. need four i think? double check reqs
 
 ```js
 const shape = new Triangle();
