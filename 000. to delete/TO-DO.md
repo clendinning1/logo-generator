@@ -2,8 +2,8 @@
 
 ## REMAINING GENERATOR STUFF
 1. add all valid color names
+    - fix tolowercase bs
 2. try to get shape checkbox validation
-3. move things to shapes.js while leaving index.js as the one to run everything
 
 ## TESTS
 write tests for shapes.js. (if you make additional js files, you don't have to build tests for those!)
