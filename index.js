@@ -76,9 +76,9 @@ function init() {
             const svg1 = "<svg width=\"300\" height=\"200\"> \n <style> \n .cirsq { \n font: bold 75px sans-serif; \n } .tri { \n font: bold 70px sans-serif; \n } \n </style> \n "
             const svg2 = " \n </svg>"
 
-            if (response.shapetype == "triangle") {
+            if (response.inqShapeType == "triangle") {
                  console.log("Building your triangle...");
-             } else if (response.shapetype == "square") {
+             } else if (response.inqShapeType == "square") {
                 console.log("Building your square...");
              } else {
                 console.log("Building your circle...");
