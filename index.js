@@ -59,8 +59,9 @@ function init() {
                     }
                     const testInput = isValidColor(input);
                     if (testInput === false) {
-                        // if the hex code isn't valid, check to see if the input is a css color name instead
-                        if (colorNames.includes(input)) {
+                        // if the hex code isn't valid, check to see if the input is a css color name instead.
+                        // .toLowerCase ensures case insensitivity for the check :)
+                        if (colorNames.includes(input.toLowerCase())) {
                             return true;
                         } else {
                             // if not, error
@@ -85,13 +86,13 @@ function init() {
                 name: 'inqShapeColor',
                 validate: function (input) {
                     const isValidColor = color => {
-                        // same as above
+                        // All notes here are the same as the previous color input
                         const hexPattern = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
                         return hexPattern.test(color);
                     }
                     const testInput = isValidColor(input);
                     if (testInput === false) {
-                        if (colorNames.includes(input)) {
+                        if (colorNames.includes(input.toLowerCase())) {
                             return true;
                         } else {
                             return "Must enter a valid color";
