@@ -1,8 +1,5 @@
 # TO-DO
 
-## REMAINING GENERATOR STUFF
-2. try to get shape checkbox validation
-
 ## TESTS
 write tests for shapes.js. (if you make additional js files, you don't have to build tests for those!)
 1. (MANDATORY) *each* class - Triangle, Square, and Circle.

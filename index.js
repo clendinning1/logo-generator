@@ -51,8 +51,14 @@ function init() {
                 type: 'checkbox',
                 message: "Choose your shape (will default to circle):",
                 choices: ["triangle", "circle", "square"],
-                default: "circle",
                 name: 'inqShapeType',
+                validate: function (inqShapeType) {
+                    if (inqShapeType == "triangle" || "circle" || "square") {
+                        return true;
+                    } else {
+                        return "Please only select one shape";
+                    }
+                }
             },
             {
                 type: 'input',
