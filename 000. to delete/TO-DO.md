@@ -1,25 +1,7 @@
 # TO-DO
 
 ## GENERATE
-1. index.js asks for the info
-?. index.js runs shapes.js
 
-which creates the svg file? 
-shapes.js has the functions with all the shapes and shit. 
-maybe shapes.js is required earlier in the index.js file?
-that way we can change the values of the variables later in index.js
-and use them to append the logo.svg file?
-
-you can't pull info into the svg file, which
-means we have to use shapes.js variables in 
-the "data" portion of the file creation.
-
-if that's the case, using shapes.js kind of feels like extra unnecessary work?
-
-can't pull variables from shapes.js to index.js.......whats the point of having index.js then???
-
-how do i get the input info from index.js into shapes.js at all???? answer: i don't, i
-just move all of shapes.js into index.js, i guess?????????????
 
 ## TESTS
 write tests for shapes.js. (if you make additional js files, you don't have to build tests for those!)
