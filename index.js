@@ -1,28 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // inquirer funct
 function init() {
     const inquirer = require('inquirer');
@@ -31,7 +6,7 @@ function init() {
             {
                 type: 'input',
                 message: "Enter text (up to 3 characters):",
-                name: 'characterinput',
+                name: 'inqCharacterInput',
                 validate: function (input) {
                     if (input.length >= 4) {
                         return "Must enter 1-3 characters";
@@ -43,7 +18,7 @@ function init() {
             {
                 type: 'input',
                 message: "Enter text color:",
-                name: 'textcolor',
+                name: 'inqTextColor',
                 validate: function (input) {
                     const isValidColor = color => {
                         const hexPattern = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
@@ -62,12 +37,12 @@ function init() {
                 message: "Choose your shape:",
                 choices: ["triangle", "circle", "square"],
                 default: "circle",
-                name: 'shapetype',
+                name: 'inqShapeType',
             },
             {
                 type: 'input',
                 message: "Enter shape color:",
-                name: 'shapecolor',
+                name: 'inqShapeColor',
                 validate: function (input) {
                     const isValidColor = color => {
                         const hexPattern = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
@@ -84,38 +59,38 @@ function init() {
         ])
         .then((response) => {
             // running shapes.js
-            require('./lib/shapes.js');
+            // require('./lib/shapes.js');
 
-            const svg1 = "<svg width=\"300\" height=\"200\"> \n <style> \n .cirsq { \n font: bold 75px sans-serif; \n } .tri { \n font: bold 70px sans-serif; \n } \n </style> \n "
-            const svg2 = " \n </svg>"
+            console.log(response.shapecolor);
 
-            let shapecolor = "white"
-            let textcolor = "black"
-            let textinput = "EXA"
+            // const svg1 = "<svg width=\"300\" height=\"200\"> \n <style> \n .cirsq { \n font: bold 75px sans-serif; \n } .tri { \n font: bold 70px sans-serif; \n } \n </style> \n "
+            // const svg2 = " \n </svg>"
 
-            const circleString = "<circle cx=\"150\" cy=\"100\" r=\"90\" fill=\"" + shapecolor + "\" /> \n <text x = \"150\" y = \"125\" fill = \"" + textcolor + "\" text-anchor=\"middle\" class=\"cirsq\" >" + textinput + "</text>"
+            // let shapecolor = "white"
+            // let textcolor = "black"
+            // let textinput = "EXA"
 
-            const logoData = svg1 + circleString + svg2
+            // const circleString = "<circle cx=\"150\" cy=\"100\" r=\"90\" fill=\"" + shapecolor + "\" /> \n <text x = \"150\" y = \"125\" fill = \"" + textcolor + "\" text-anchor=\"middle\" class=\"cirsq\" >" + textinput + "</text>"
 
-            if (response.shapetype == "circle") {
-                console.log("Building your circle...");
-            } else if (response.shapetype == "triangle") {
-                console.log("Building your triangle...");
-            } else if (response.shapetype == "square") {
-                console.log("Building your square...");
-            } else {
-                console.log("Bad input, defaulting to circle. Building your circle...");
-            }
+            // const logoData = svg1 + circleString + svg2
 
-            function createFile() {
-                const fs = require("fs");
+            // if (response.shapetype == "triangle") {
+            //     console.log("Building your triangle...");
+            // } else if (response.shapetype == "square") {
+            //     console.log("Building your square...");
+            // } else {
+            //     console.log("Building your circle...");
+            // }
 
-                fs.appendFile('logo.svg', logoData, (err) =>
-                    err ? console.error(err) : console.log("Generated logo.svg")
-                );
-            }
+            // function createFile() {
+            //     const fs = require("fs");
 
-            createFile();
+            //     fs.appendFile('logo.svg', logoData, (err) =>
+            //         err ? console.error(err) : console.log("Generated logo.svg")
+            //     );
+            // }
+
+            // createFile();
 
             return;
         });
