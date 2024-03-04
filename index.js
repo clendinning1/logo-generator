@@ -1,22 +1,29 @@
 // shape classes!
 function Shape(baseTextInput, baseTextColor, baseShapeColor) {
+    // setting up values to be inherited by its children
     this.baseTextInput = baseTextInput;
     this.baseTextColor = baseTextColor;
     this.baseShapeColor = baseShapeColor;
 };
 
 function Triangle(baseTextInput, baseTextColor, baseShapeColor) {
+    // calling from Shape class parent
     Shape.call(this, baseTextInput, baseTextColor, baseShapeColor);
+    // string for the shape specific input into the svg file.
     this.triangleString = "<polygon points=\"40 10, 260 10, 150 185\" style=\"fill: " + baseShapeColor + "\" /> \n <text x = \"145\" y = \"90\" fill = \"" + baseTextColor + "\" text-anchor=\"middle\" class=\"tri\" > " + baseTextInput + "</text>";
 };
 
 function Circle(baseTextInput, baseTextColor, baseShapeColor) {
+    // calling from Shape class parent
     Shape.call(this, baseTextInput, baseTextColor, baseShapeColor);
+    // string for the shape specific input into the svg file.
     this.circleString = "<circle cx=\"150\" cy=\"100\" r=\"90\" fill=\"" + baseShapeColor + "\" /> \n <text x = \"150\" y = \"125\" fill = \"" + baseTextColor + "\" text-anchor=\"middle\" class=\"cirsq\" >" + baseTextInput + "</text>";
 };
 
 function Square(baseTextInput, baseTextColor, baseShapeColor) {
+    // calling from Shape class parent
     Shape.call(this, baseTextInput, baseTextColor, baseShapeColor);
+    // string for the shape specific input into the svg file.
     this.squareString = "<rect x=\"65\" y=\"15\" width=\"170\" height=\"170\" fill=\"" + baseShapeColor + "\" /> \n <text x=\"150\" y=\"125\" fill= \"" + baseTextColor + "\" text-anchor=\"middle\" class=\"cirsq\">" + baseTextInput + "</text>";
 };
 
@@ -31,6 +38,7 @@ function init() {
                 type: 'input',
                 message: "Enter text (up to 3 characters):",
                 name: 'inqTextInput',
+                // validating character input length
                 validate: function (input) {
                     if (input.length >= 4) {
                         return "Must enter 1-3 characters";
@@ -45,17 +53,21 @@ function init() {
                 name: 'inqTextColor',
                 validate: function (input) {
                     const isValidColor = color => {
+                        // using regex to make sure the hex code is valid
                         const hexPattern = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
                         return hexPattern.test(color);
                     }
                     const testInput = isValidColor(input);
                     if (testInput === false) {
+                        // if the hex code isn't valid, check to see if the input is a css color name instead
                         if (colorNames.includes(input)) {
                             return true;
                         } else {
+                            // if not, error
                             return "Must enter a valid color";
                         }
                     } else {
+                        // if the hex code is valid, return "true" for the validator
                         return true;
                     }
                 }
@@ -73,6 +85,7 @@ function init() {
                 name: 'inqShapeColor',
                 validate: function (input) {
                     const isValidColor = color => {
+                        // same as above
                         const hexPattern = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
                         return hexPattern.test(color);
                     }
@@ -95,12 +108,14 @@ function init() {
             const svg2 = " \n </svg>"
 
             if (response.inqShapeType == "triangle") {
-
+                // if the chosen shape was a triangle...
                 console.log("Building your triangle...");
 
+                // plugging in inputs from inquirer into svg file string
                 const newTriangle = new Triangle(response.inqTextInput, response.inqTextColor, response.inqShapeColor);
                 const fullTriangleString = svg1 + newTriangle.triangleString + svg2;
 
+                // creating the svg file
                 function createTriangle() {
                     const fs = require("fs");
 
@@ -112,7 +127,7 @@ function init() {
                 createTriangle();
 
             } else if (response.inqShapeType == "square") {
-
+                // if square... (same as above)
                 console.log("Building your square...");
 
                 const newSquare = new Square(response.inqTextInput, response.inqTextColor, response.inqShapeColor);
@@ -129,9 +144,9 @@ function init() {
                 createSquare();
 
             } else {
-
+                // if circle... (same as above)
                 console.log("Building your circle...");
-
+                
                 const newCircle = new Circle(response.inqTextInput, response.inqTextColor, response.inqShapeColor);
                 const fullCirString = svg1 + newCircle.circleString + svg2;
 
