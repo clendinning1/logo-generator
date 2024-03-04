@@ -1,0 +1,11 @@
+<svg width="300" height="200"> 
+ <style> 
+ .cirsq { 
+ font: bold 75px sans-serif; 
+ } .tri { 
+ font: bold 70px sans-serif; 
+ } 
+ </style> 
+ <polygon points="40 10, 260 10, 150 185" style="fill: #789789" /> 
+ <text x = "145" y = "90" fill = "#123123" text-anchor="middle" class="tri" > TRI</text> 
+ </svg>

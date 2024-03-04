@@ -1,17 +1,5 @@
 # TO-DO
 
-## INQUIRER
-6. takes inputs as instructions for the svg file
-7. creates file called `logo.svg`
-8. generates text in the command line: "Generated logo.svg"
-
-## SVG INSTRUCTIONS
-1. create `Triangle`, `Square`, and `Circle` classes.
-2. create a parent `Shape` class for `Triangle`, `Square`, and `Circle` to inherit from. (DRY)
-3. ???????????????????????????????
-4. research SVG using the links in REQS.md
-5. create a 300x200 px image using the instructions from the inquirer prompts.
-
 ## TESTS
 write tests for shapes.js. (if you make additional js files, you don't have to build tests for those!)
 1. (MANDATORY) *each* class - Triangle, Square, and Circle.

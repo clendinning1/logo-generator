@@ -1,0 +1,11 @@
+<svg width="300" height="200"> 
+ <style> 
+ .cirsq { 
+ font: bold 75px sans-serif; 
+ } .tri { 
+ font: bold 70px sans-serif; 
+ } 
+ </style> 
+ <rect x="65" y="15" width="170" height="170" fill="#b4daff" /> 
+ <text x="150" y="125" fill= "#000000" text-anchor="middle" class="cirsq">YAY</text> 
+ </svg>
