@@ -1,4 +1,4 @@
-// Shape Classes!
+// shape classes!
 function Shape(baseTextInput, baseTextColor, baseShapeColor) {
     this.baseTextInput = baseTextInput;
     this.baseTextColor = baseTextColor;
@@ -20,7 +20,7 @@ function Square(baseTextInput, baseTextColor, baseShapeColor) {
     this.squareString = "<rect x=\"65\" y=\"15\" width=\"170\" height=\"170\" fill=\"" + baseShapeColor + "\" /> \n <text x=\"150\" y=\"125\" fill= \"" + baseTextColor + "\" text-anchor=\"middle\" class=\"cirsq\">" + baseTextInput + "</text>";
 };
 
-
+const colorNames = ["blue", "yellow"];
 
 // inquirer funct
 function init() {
@@ -50,7 +50,11 @@ function init() {
                     }
                     const testInput = isValidColor(input);
                     if (testInput === false) {
-                        return "Must enter a valid color";
+                        if (colorNames.includes(input)) {
+                            return true;
+                        } else {
+                            return "Must enter a valid color";
+                        }
                     } else {
                         return true;
                     }
@@ -74,7 +78,11 @@ function init() {
                     }
                     const testInput = isValidColor(input);
                     if (testInput === false) {
-                        return "Must enter a valid color";
+                        if (colorNames.includes(input)) {
+                            return true;
+                        } else {
+                            return "Must enter a valid color";
+                        }
                     } else {
                         return true;
                     }
