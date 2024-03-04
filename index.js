@@ -6,7 +6,7 @@ function init() {
             {
                 type: 'input',
                 message: "Enter text (up to 3 characters):",
-                name: 'inqCharacterInput',
+                name: 'inqTextInput',
                 validate: function (input) {
                     if (input.length >= 4) {
                         return "Must enter 1-3 characters";
@@ -58,39 +58,35 @@ function init() {
             },
         ])
         .then((response) => {
-            // running shapes.js
-            // require('./lib/shapes.js');
+            const svg1 = "<svg width=\"300\" height=\"200\"> \n <style> \n .cirsq { \n font: bold 75px sans-serif; \n } .tri { \n font: bold 70px sans-serif; \n } \n </style> \n "
+            const svg2 = " \n </svg>"
 
-            console.log(response.shapecolor);
+            function Shape(baseTextInput, baseTextColor, baseShapeColor) {
+                this.baseTextInput = baseTextInput;
+                this.baseTextColor = baseTextColor;
+                this.baseShapeColor = baseShapeColor;
+            };
 
-            // const svg1 = "<svg width=\"300\" height=\"200\"> \n <style> \n .cirsq { \n font: bold 75px sans-serif; \n } .tri { \n font: bold 70px sans-serif; \n } \n </style> \n "
-            // const svg2 = " \n </svg>"
+            function Circle(baseTextInput, baseTextColor, baseShapeColor) {
+                Shape.call(this, baseTextInput, baseTextColor, baseShapeColor);
+                this.circleString = "<circle cx=\"150\" cy=\"100\" r=\"90\" fill=\"" + baseShapeColor + "\" /> \n <text x = \"150\" y = \"125\" fill = \"" + baseTextColor + "\" text-anchor=\"middle\" class=\"cirsq\" >" + baseTextInput + "</text>";
+            };
 
-            // let shapecolor = "white"
-            // let textcolor = "black"
-            // let textinput = "EXA"
+            console.log("Building your circle...");
 
-            // const circleString = "<circle cx=\"150\" cy=\"100\" r=\"90\" fill=\"" + shapecolor + "\" /> \n <text x = \"150\" y = \"125\" fill = \"" + textcolor + "\" text-anchor=\"middle\" class=\"cirsq\" >" + textinput + "</text>"
+            const newCircle = new Circle(response.inqTextInput, response.inqTextColor, response.inqShapeColor);
 
-            // const logoData = svg1 + circleString + svg2
+            const fullCirString = svg1 + newCircle.circleString + svg2;
 
-            // if (response.shapetype == "triangle") {
-            //     console.log("Building your triangle...");
-            // } else if (response.shapetype == "square") {
-            //     console.log("Building your square...");
-            // } else {
-            //     console.log("Building your circle...");
-            // }
+            function createCircle() {
+                const fs = require("fs");
 
-            // function createFile() {
-            //     const fs = require("fs");
+                fs.appendFile('logo.svg', fullCirString, (err) =>
+                    err ? console.error(err) : console.log("Generated logo.svg")
+                );
+            }
 
-            //     fs.appendFile('logo.svg', logoData, (err) =>
-            //         err ? console.error(err) : console.log("Generated logo.svg")
-            //     );
-            // }
-
-            // createFile();
+            createCircle();
 
             return;
         });
