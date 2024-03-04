@@ -10,6 +10,11 @@ function Circle(baseTextInput, baseTextColor, baseShapeColor) {
     this.circleString = "<circle cx=\"150\" cy=\"100\" r=\"90\" fill=\"" + baseShapeColor + "\" /> \n <text x = \"150\" y = \"125\" fill = \"" + baseTextColor + "\" text-anchor=\"middle\" class=\"cirsq\" >" + baseTextInput + "</text>";
 };
 
+function Square(baseTextInput, baseTextColor, baseShapeColor) {
+    Shape.call(this, baseTextInput, baseTextColor, baseShapeColor);
+    this.squareString = "<rect x=\"65\" y=\"15\" width=\"170\" height=\"170\" fill=\"" + baseShapeColor + "\" /> \n <text x=\"150\" y=\"125\" fill= \"" + baseTextColor + "\" text-anchor=\"middle\" class=\"cirsq\">" + baseTextInput + "</text>"
+};
+
 
 
 // inquirer funct
@@ -48,7 +53,7 @@ function init() {
             },
             {
                 type: 'checkbox',
-                message: "Choose your shape:",
+                message: "Choose your shape (will default to circle):",
                 choices: ["triangle", "circle", "square"],
                 default: "circle",
                 name: 'inqShapeType',
@@ -80,10 +85,24 @@ function init() {
                  console.log("Building your triangle...");
              } else if (response.inqShapeType == "square") {
                 console.log("Building your square...");
+
+                const newSquare = new Square(response.inqTextInput, response.inqTextColor, response.inqShapeColor);
+                const fullSquareString = svg1 + newSquare.squareString + svg2;
+
+                function createSquare() {
+                    const fs = require("fs");
+
+                    fs.appendFile('logo.svg', fullSquareString, (err) =>
+                        err ? console.error(err) : console.log("Generated logo.svg")
+                    );
+                }
+
+                createSquare();
+
              } else {
                 console.log("Building your circle...");
-                const newCircle = new Circle(response.inqTextInput, response.inqTextColor, response.inqShapeColor);
 
+                const newCircle = new Circle(response.inqTextInput, response.inqTextColor, response.inqShapeColor);
                 const fullCirString = svg1 + newCircle.circleString + svg2;
 
                 function createCircle() {
