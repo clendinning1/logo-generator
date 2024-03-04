@@ -1,7 +1,6 @@
 # TO-DO
 
 ## REMAINING GENERATOR STUFF
-1. add all valid color names
 2. try to get shape checkbox validation
 
 ## TESTS
