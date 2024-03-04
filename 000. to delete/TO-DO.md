@@ -21,8 +21,6 @@ can't pull variables from shapes.js to index.js.......whats the point of having 
 how do i get the input info from index.js into shapes.js at all???? answer: i don't, i
 just move all of shapes.js into index.js, i guess?????????????
 
-wait how do i write svg syntax in a js variable? do i have to use the ${} bullshit?
-
 ## TESTS
 write tests for shapes.js. (if you make additional js files, you don't have to build tests for those!)
 1. (MANDATORY) *each* class - Triangle, Square, and Circle.
