@@ -5,6 +5,11 @@ function Shape(baseTextInput, baseTextColor, baseShapeColor) {
     this.baseShapeColor = baseShapeColor;
 };
 
+function Triangle(baseTextInput, baseTextColor, baseShapeColor) {
+    Shape.call(this, baseTextInput, baseTextColor, baseShapeColor);
+    this.triangleString = "<polygon points=\"40 10, 260 10, 150 185\" style=\"fill: " + baseShapeColor + "\" /> \n <text x = \"145\" y = \"90\" fill = \"" + baseTextColor + "\" text-anchor=\"middle\" class=\"tri\" > " + baseTextInput + "</text>";
+};
+
 function Circle(baseTextInput, baseTextColor, baseShapeColor) {
     Shape.call(this, baseTextInput, baseTextColor, baseShapeColor);
     this.circleString = "<circle cx=\"150\" cy=\"100\" r=\"90\" fill=\"" + baseShapeColor + "\" /> \n <text x = \"150\" y = \"125\" fill = \"" + baseTextColor + "\" text-anchor=\"middle\" class=\"cirsq\" >" + baseTextInput + "</text>";
@@ -12,7 +17,7 @@ function Circle(baseTextInput, baseTextColor, baseShapeColor) {
 
 function Square(baseTextInput, baseTextColor, baseShapeColor) {
     Shape.call(this, baseTextInput, baseTextColor, baseShapeColor);
-    this.squareString = "<rect x=\"65\" y=\"15\" width=\"170\" height=\"170\" fill=\"" + baseShapeColor + "\" /> \n <text x=\"150\" y=\"125\" fill= \"" + baseTextColor + "\" text-anchor=\"middle\" class=\"cirsq\">" + baseTextInput + "</text>"
+    this.squareString = "<rect x=\"65\" y=\"15\" width=\"170\" height=\"170\" fill=\"" + baseShapeColor + "\" /> \n <text x=\"150\" y=\"125\" fill= \"" + baseTextColor + "\" text-anchor=\"middle\" class=\"cirsq\">" + baseTextInput + "</text>";
 };
 
 
@@ -82,8 +87,24 @@ function init() {
             const svg2 = " \n </svg>"
 
             if (response.inqShapeType == "triangle") {
-                 console.log("Building your triangle...");
-             } else if (response.inqShapeType == "square") {
+
+                console.log("Building your triangle...");
+
+                const newTriangle = new Triangle(response.inqTextInput, response.inqTextColor, response.inqShapeColor);
+                const fullTriangleString = svg1 + newTriangle.triangleString + svg2;
+
+                function createTriangle() {
+                    const fs = require("fs");
+
+                    fs.appendFile('logo.svg', fullTriangleString, (err) =>
+                        err ? console.error(err) : console.log("Generated logo.svg")
+                    );
+                }
+
+                createTriangle();
+
+            } else if (response.inqShapeType == "square") {
+
                 console.log("Building your square...");
 
                 const newSquare = new Square(response.inqTextInput, response.inqTextColor, response.inqShapeColor);
@@ -99,7 +120,8 @@ function init() {
 
                 createSquare();
 
-             } else {
+            } else {
+
                 console.log("Building your circle...");
 
                 const newCircle = new Circle(response.inqTextInput, response.inqTextColor, response.inqShapeColor);
