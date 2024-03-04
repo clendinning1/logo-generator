@@ -86,6 +86,17 @@ function init() {
             // running shapes.js
             require('./lib/shapes.js');
 
+            const svg1 = "<svg width=\"300\" height=\"200\"> \n <style> \n .cirsq { \n font: bold 75px sans-serif; \n } .tri { \n font: bold 70px sans-serif; \n } \n </style> \n "
+            const svg2 = " \n </svg>"
+
+            let shapecolor = "white"
+            let textcolor = "black"
+            let textinput = "EXA"
+
+            const circleString = "<circle cx=\"150\" cy=\"100\" r=\"90\" fill=\"" + shapecolor + "\" /> \n <text x = \"150\" y = \"125\" fill = \"" + textcolor + "\" text-anchor=\"middle\" class=\"cirsq\" >" + textinput + "</text>"
+
+            const logoData = svg1 + circleString + svg2
+
             if (response.shapetype == "circle") {
                 console.log("Building your circle...");
             } else if (response.shapetype == "triangle") {
@@ -99,7 +110,7 @@ function init() {
             function createFile() {
                 const fs = require("fs");
 
-                fs.appendFile('logo.svg', svg, (err) =>
+                fs.appendFile('logo.svg', logoData, (err) =>
                     err ? console.error(err) : console.log("Generated logo.svg")
                 );
             }
