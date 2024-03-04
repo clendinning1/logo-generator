@@ -2,7 +2,6 @@
 
 ## REMAINING GENERATOR STUFF
 1. add all valid color names
-    - fix tolowercase bs
 2. try to get shape checkbox validation
 
 ## TESTS
