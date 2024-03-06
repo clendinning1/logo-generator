@@ -2,9 +2,8 @@
 
 ## Description
 
-## Installation
-
 ## Usage
+- walkthrough video - https://drive.google.com/file/d/1KYDy_E600tE1QymlHfeIqXBJR_nnBEib/view
 
 ## Sources
 - inquirer
