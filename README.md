@@ -5,6 +5,8 @@ Generate a logo in your terminal with this app. Choose a triangle, square, or ci
 
 ## Usage
 [Walkthrough video](https://drive.google.com/file/d/1KYDy_E600tE1QymlHfeIqXBJR_nnBEib/view)
+## Example
+![Image of a square logo with the text "YAY" in its center.](./examples/images/square-ex.png)
 
 ## Sources
 ### Packages
